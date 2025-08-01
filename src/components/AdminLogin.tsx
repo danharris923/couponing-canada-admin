@@ -64,9 +64,6 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin }) => {
               placeholder="Enter admin password"
               required
             />
-            <p className="text-xs text-gray-500 mt-1">
-              Demo access: <code className="text-neon-green">admin123</code>
-            </p>
           </div>
 
           {error && (

@@ -35,32 +35,26 @@ export default async function handler(req, res) {
 
 async function handleLogin(req, res, password) {
   const storedHash = process.env.ADMIN_PASSWORD_HASH;
+  const simplePassword = process.env.ADMIN_SIMPLE_PASSWORD;
   const sessionSecret = process.env.ADMIN_SESSION_SECRET || 'default-secret-change-me';
   
-  // First-time setup - create admin password if not exists  
-  if (!storedHash) {
-    if (password === 'admin123') {
-      const token = jwt.sign(
-        { admin: true, setup: true }, 
-        sessionSecret, 
-        { expiresIn: '24h' }
-      );
-      
-      return res.status(200).json({ 
-        success: true, 
-        token,
-        message: 'First-time setup - please change default password',
-        setup: true
-      });
-    } else {
-      return res.status(401).json({ error: 'Use default password: admin123' });
-    }
+  let isValid = false;
+  
+  // Check simple password first (easier setup)
+  if (simplePassword) {
+    isValid = password === simplePassword;
+  }
+  // Then check hashed password (more secure)
+  else if (storedHash) {
+    isValid = await bcrypt.compare(password, storedHash);
+  }
+  // Fallback for demo/testing
+  else {
+    isValid = password === 'admin123';
   }
   
-  const isValid = await bcrypt.compare(password, storedHash);
-  
   if (!isValid) {
-    return res.status(401).json({ error: 'Invalid password' });
+    return res.status(401).json({ error: 'Invalid admin credentials' });
   }
   
   const token = jwt.sign(
@@ -72,7 +66,7 @@ async function handleLogin(req, res, password) {
   return res.status(200).json({ 
     success: true, 
     token,
-    message: 'Login successful'
+    message: 'Admin access granted'
   });
 }
 
