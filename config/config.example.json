@@ -1,0 +1,136 @@
+{
+  "// SITE CONFIGURATION": "Basic site settings and branding",
+  "site_name": "My Content Site",
+  "scraper_type": "rss",
+  "update_interval": 3600,
+  "ai_enhancement_enabled": true,
+  "affiliate_tag": "mysite-20",
+
+  "// CONTENT SOURCES": "Feed URLs to scrape content from",
+  "feeds": [
+    "https://example.com/feed.xml",
+    "https://anotherblog.com/rss",
+    "https://newssite.com/feed"
+  ],
+
+  "// CONTENT MAPPING": "How to map scraped fields to standard format",
+  "content_mapping": {
+    "title": "title",
+    "url": "link", 
+    "image": "media:thumbnail",
+    "excerpt": "description",
+    "category": "category",
+    "date": "published"
+  },
+
+  "// EXAMPLE CONFIGURATIONS FOR DIFFERENT SCRAPER TYPES": "---",
+  
+  "// RSS SCRAPER EXAMPLE": {
+    "site_name": "RSS News Aggregator",
+    "scraper_type": "rss",
+    "feeds": [
+      "https://feeds.example.com/rss",
+      "https://blog.example.com/feed.xml"
+    ],
+    "content_mapping": {
+      "title": "title",
+      "url": "link",
+      "image": "media:thumbnail",
+      "excerpt": "summary",
+      "category": "tags",
+      "date": "published"
+    },
+    "update_interval": 1800,
+    "ai_enhancement_enabled": true,
+    "affiliate_tag": "example-rss-20"
+  },
+
+  "// WORDPRESS SCRAPER EXAMPLE": {
+    "site_name": "WordPress Content Hub",
+    "scraper_type": "wordpress",
+    "feeds": [
+      "https://wordpress-site.com/wp-json/wp/v2/posts",
+      "https://another-wp.com/feed/"
+    ],
+    "content_mapping": {
+      "title": "title.rendered",
+      "url": "link",
+      "image": "featured_media",
+      "excerpt": "excerpt.rendered",
+      "category": "categories",
+      "date": "date"
+    },
+    "update_interval": 2700,
+    "ai_enhancement_enabled": true,
+    "affiliate_tag": "wpsite-20"
+  },
+
+  "// CUSTOM SCRAPER EXAMPLE": {
+    "site_name": "Custom Content Scraper",
+    "scraper_type": "custom",
+    "feeds": [
+      "https://api.example.com/content",
+      "https://custom-source.com/data"
+    ],
+    "content_mapping": {
+      "title": "post_title",
+      "url": "permalink",
+      "image": "thumbnail_url",
+      "excerpt": "post_excerpt",
+      "category": "post_category",
+      "date": "publish_date"
+    },
+    "update_interval": 3600,
+    "ai_enhancement_enabled": true,
+    "affiliate_tag": "custom-20"
+  },
+
+  "_documentation": {
+    "_description": "Configuration options documentation",
+    "site_name": "Display name for your site (shown in header and meta)",
+    "scraper_type": "Type of scraper: 'rss', 'wordpress', or 'custom'",
+    "feeds": "Array of URLs to scrape content from",
+    "content_mapping": "Maps source fields to standard format",
+    "field_paths": {
+      "title": "Path to article title in source data",
+      "url": "Path to article URL in source data",
+      "image": "Path to featured image in source data", 
+      "excerpt": "Path to article description/excerpt",
+      "category": "Path to category/tags (optional)",
+      "date": "Path to publication date (optional)"
+    },
+    "update_interval": "Seconds between scraping runs (minimum 300)",
+    "ai_enhancement_enabled": "Enable AI content enhancement (true/false)",
+    "affiliate_tag": "Your affiliate tracking tag (optional)"
+  },
+
+  "_field_mapping_examples": {
+    "_description": "Common field paths for different sources",
+    "rss_standard_fields": {
+      "title": "title",
+      "url": "link",
+      "image": "media:thumbnail OR enclosure.url",
+      "excerpt": "description OR summary",
+      "category": "category OR tags",
+      "date": "published OR pubDate"
+    },
+
+    "wordpress_rest_api_fields": {
+      "title": "title.rendered",
+      "url": "link",
+      "image": "featured_media OR _embedded['wp:featuredmedia'][0].source_url",
+      "excerpt": "excerpt.rendered",
+      "category": "categories OR _embedded['wp:term'][0][0].name",
+      "date": "date"
+    },
+
+    "custom_api_fields": {
+      "title": "title OR post_title OR headline",
+      "url": "url OR permalink OR link",
+      "image": "image OR thumbnail OR featured_image",
+      "excerpt": "excerpt OR description OR summary",
+      "category": "category OR tag OR section",
+      "date": "date OR published_at OR created_at"
+    }
+  }
+}

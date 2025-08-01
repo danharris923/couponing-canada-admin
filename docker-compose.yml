@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./public/deals.json:/usr/share/nginx/html/deals.json:ro
+    depends_on:
+      - scraper
+    restart: unless-stopped
+
+  scraper:
+    build: ./scraper
+    volumes:
+      - ./public:/app/public
+      - ./credentials:/app/credentials:ro
+    environment:
+      - GOOGLE_CREDS_FILE=/app/credentials/google_service_account.json
+      - SPREADSHEET_ID=${SPREADSHEET_ID}
+    restart: "no"
+    command: ["python", "automation.py"]
+
+  # Optional: Run scraper on schedule
+  scraper-cron:
+    build: ./scraper
+    volumes:
+      - ./public:/app/public
+      - ./credentials:/app/credentials:ro
+    environment:
+      - GOOGLE_CREDS_FILE=/app/credentials/google_service_account.json
+      - SPREADSHEET_ID=${SPREADSHEET_ID}
+    restart: unless-stopped
+    entrypoint: >
+      sh -c "
+      while true; do
+        echo 'Running scraper at ' $$(date);
+        python automation.py;
+        sleep 3600;
+      done
+      "

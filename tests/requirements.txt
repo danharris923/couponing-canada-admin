@@ -1,0 +1,31 @@
+# Testing dependencies for Modern Template Content Scraper
+
+# Core testing framework
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-timeout>=2.1.0
+
+# Additional testing utilities
+responses>=0.23.0        # HTTP request mocking
+aioresponses>=0.7.4      # Async HTTP request mocking
+freezegun>=1.2.0         # Date/time mocking
+faker>=18.0.0            # Test data generation
+
+# Coverage and reporting
+coverage>=7.0.0
+pytest-html>=3.1.0      # HTML test reports
+pytest-xdist>=3.0.0     # Parallel test execution
+
+# Development tools
+black>=23.0.0            # Code formatting
+flake8>=6.0.0           # Linting
+mypy>=1.0.0             # Type checking
+isort>=5.12.0           # Import sorting
+
+# For testing with actual dependencies (optional)
+feedparser>=6.0.10      # RSS parsing
+beautifulsoup4>=4.11.0  # HTML parsing
+aiohttp>=3.8.0          # Async HTTP client
+pydantic>=2.0.0         # Data validation

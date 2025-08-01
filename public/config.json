@@ -1,0 +1,64 @@
+{
+  "siteName": "Modern Content Template",
+  "tagline": "Discover Amazing Content",
+  "description": "A modern, AI-powered content aggregation platform built with React and Pydantic AI",
+  
+  "logo": {
+    "text": "ModernTemplate",
+    "backgroundColor": "#10B981",
+    "textColor": "#FFFFFF"
+  },
+  
+  "colors": {
+    "primary": "#10B981",
+    "primaryHover": "#059669",
+    "textDark": "#1F2937",
+    "cardPink": "#FDF2F8",
+    "cardBlue": "#EFF6FF",
+    "cardYellow": "#FFFBEB",
+    "gradientFrom": "#10B981",
+    "gradientTo": "#059669"
+  },
+  
+  "navigation": {
+    "showHome": true,
+    "showDeals": true,
+    "showCoupons": false,
+    "showAmazon": false,
+    "showAbout": true,
+    "customLinks": [
+      {
+        "label": "Categories",
+        "href": "/categories",
+        "external": false
+      }
+    ]
+  },
+  
+  "content": {
+    "dataFile": "/data.json",
+    "itemsPerPage": 12,
+    "showFeaturedSidebar": true,
+    "featuredItemsCount": 5,
+    "searchPlaceholder": "Search content...",
+    "noResultsMessage": "No content found matching your search."
+  },
+  
+  "meta": {
+    "title": "Modern Content Template - AI-Powered Content Discovery",
+    "description": "Discover curated content with AI-powered enhancement, categorization, and quality validation.",
+    "keywords": "content, AI, template, modern, react, pydantic"
+  },
+  
+  "footer": {
+    "companyName": "Modern Template",
+    "tagline": "Powered by AI-enhanced content curation",
+    "copyright": "© 2025 Modern Template. Built with React and Pydantic AI."
+  },
+  
+  "advanced": {
+    "enableAnalytics": false,
+    "enablePWA": false,
+    "customCSS": ""
+  }
+}

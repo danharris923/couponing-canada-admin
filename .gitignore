@@ -1,0 +1,7 @@
+credentials/
+node_modules/
+__pycache__/
+build/
+*.log
+nul
+temp.txt
