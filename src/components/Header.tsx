@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 
   return (
     <header>
-      <div className="bg-primary-green">
+      <div className="bg-cyber-black">
         <div className="max-w-container mx-auto px-4 py-4 md:py-6">
           <div className="flex items-center">
             <h1 className="text-2xl md:text-4xl font-bold text-white">
@@ -65,25 +65,25 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
             
             <div className="hidden md:flex items-center space-x-6">
               {config.navigation.showHome && (
-                <a href="/" className="text-text-dark hover:text-primary-green font-medium">HOME</a>
+                <a href="/" className="text-text-dark hover:text-neon-pink font-medium">HOME</a>
               )}
               {config.navigation.showDeals && (
-                <a href="/deals" className="text-text-dark hover:text-primary-green">CONTENT</a>
+                <a href="/deals" className="text-text-dark hover:text-neon-pink">CONTENT</a>
               )}
               {config.navigation.showCoupons && (
-                <a href="/coupons" className="text-text-dark hover:text-primary-green">COUPONS</a>
+                <a href="/coupons" className="text-text-dark hover:text-neon-pink">COUPONS</a>
               )}
               {config.navigation.showAmazon && (
-                <a href="/amazon" className="text-text-dark hover:text-primary-green">AMAZON</a>
+                <a href="/amazon" className="text-text-dark hover:text-neon-pink">AMAZON</a>
               )}
               {config.navigation.showAbout && (
-                <a href="/about" className="text-text-dark hover:text-primary-green">ABOUT</a>
+                <a href="/about" className="text-text-dark hover:text-neon-pink">ABOUT</a>
               )}
               {config.navigation.customLinks?.map((link, index) => (
                 <a 
                   key={index}
                   href={link.href}
-                  className="text-text-dark hover:text-primary-green"
+                  className="text-text-dark hover:text-neon-pink"
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
                 >
@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
                 placeholder={config.content.searchPlaceholder}
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="border border-gray-300 rounded px-3 py-1.5 text-sm w-32 md:w-48 focus:outline-none focus:border-primary-green"
+                className="border border-gray-300 rounded px-3 py-1.5 text-sm w-32 md:w-48 focus:outline-none focus:border-neon-pink"
               />
               <button type="submit" className="ml-2 p-1.5">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,25 +111,25 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           {mobileMenuOpen && (
             <div className="md:hidden py-3 border-t">
               {config.navigation.showHome && (
-                <a href="/" className="block py-2 text-text-dark hover:text-primary-green font-medium">HOME</a>
+                <a href="/" className="block py-2 text-text-dark hover:text-neon-pink font-medium">HOME</a>
               )}
               {config.navigation.showDeals && (
-                <a href="/deals" className="block py-2 text-text-dark hover:text-primary-green">CONTENT</a>
+                <a href="/deals" className="block py-2 text-text-dark hover:text-neon-pink">CONTENT</a>
               )}
               {config.navigation.showCoupons && (
-                <a href="/coupons" className="block py-2 text-text-dark hover:text-primary-green">COUPONS</a>
+                <a href="/coupons" className="block py-2 text-text-dark hover:text-neon-pink">COUPONS</a>
               )}
               {config.navigation.showAmazon && (
-                <a href="/amazon" className="block py-2 text-text-dark hover:text-primary-green">AMAZON</a>
+                <a href="/amazon" className="block py-2 text-text-dark hover:text-neon-pink">AMAZON</a>
               )}
               {config.navigation.showAbout && (
-                <a href="/about" className="block py-2 text-text-dark hover:text-primary-green">ABOUT</a>
+                <a href="/about" className="block py-2 text-text-dark hover:text-neon-pink">ABOUT</a>
               )}
               {config.navigation.customLinks?.map((link, index) => (
                 <a 
                   key={index}
                   href={link.href}
-                  className="block py-2 text-text-dark hover:text-primary-green"
+                  className="block py-2 text-text-dark hover:text-neon-pink"
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
                 >

@@ -14,14 +14,8 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin }) => {
     setLoading(true);
     setError('');
 
-    // Mock authentication for production demo
-    if (password === 'admin123') {
-      setTimeout(() => {
-        onLogin('mock-admin-token-production');
-        setLoading(false);
-      }, 1000);
-      return;
-    }
+    // Mock authentication for production demo - no hardcoded passwords
+    // Uses environment variables or fallback to demo mode
 
     try {
       const response = await fetch('/api/admin/auth', {

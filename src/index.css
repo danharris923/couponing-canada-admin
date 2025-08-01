@@ -13,3 +13,23 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/* Remove all outlines globally */
+* {
+  outline: none !important;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Cyberpunk Theme Variables */
+:root {
+  --neon-pink: #FF0080;
+  --neon-orange: #FF4500;
+  --neon-green: #00FF41;
+  --cyber-black: #0A0A0A;
+  --cyber-gray: #1A1A1A;
+  --cyber-gray-light: #2A2A2A;
+}

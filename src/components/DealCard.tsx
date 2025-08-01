@@ -62,7 +62,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal, onClick, variant = 'default',
               <>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <p className="text-2xl font-bold text-primary-green">{priceDisplay.current}</p>
+                    <p className="text-2xl font-bold text-neon-pink">{priceDisplay.current}</p>
                     {priceDisplay.original && (
                       <p className="text-sm text-gray-500 line-through">{priceDisplay.original}</p>
                     )}
@@ -73,7 +73,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal, onClick, variant = 'default',
                     e.stopPropagation();
                     window.open(deal.affiliateUrl, '_blank');
                   }}
-                  className="bg-primary-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors shadow-sm"
+                  className="bg-neon-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-neon-orange transition-colors shadow-sm"
                 >
                   Shop Now
                 </button>
@@ -89,7 +89,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal, onClick, variant = 'default',
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="block w-full bg-gradient-to-r from-primary-green to-green-600 text-white py-3 px-4 rounded-lg text-center font-bold hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg"
+                  className="block w-full bg-neon-pink text-white py-3 px-4 rounded-lg text-center font-bold hover:bg-neon-orange transition-all transform hover:scale-105 shadow-lg"
                 >
                   {priceVisibility.checkPriceMessage}
                 </a>
